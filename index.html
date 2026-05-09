@@ -1,11 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 131</title>
+    <title>WDD 131 - Dynamic Web Fundamentals - Shelby Baird</title>
+    <meta name="description"
+        content="This website I am building for WDD131 has a little information about me, Shelby Baird, my family and where we live.">
+    <meta name="author" content="Shelby Baird">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Open+Sans&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/base.css">
+    <script src="../scripts/getdates.js" defer></script>
 </head>
+
 <body>
-    <h1>WDD 131 Shelby Baird</h1>
+    <header>
+        <span id="course-title">WDD131 - Dynamic Web Fundamentals</span>
+        <nav>
+            <a href="https://www.linkedin.com/in/shelby-baird/">LinkedIn</a>
+            <a href="https://byupw.instructure.com/">Canvas</a>
+            <a
+                href="https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/2?lang=eng&id=p22#p22">Scripture</a>
+            <a href="final-project">Final Project</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Shelby Baird</h1>
+        <div class="cards-container">
+            <section class="card">
+                <h2>About Me</h2>
+                <img src="images/Shelby.jpg" alt="Shelby Baird" class="float-right">
+                <p>My name is Shelby Baird. I grew up in Nevada and moved to Utah when I was junior in high school.
+                    I've been married for 23 years and have 4 kids. As a a family we love to travel to Hawaii, snorkle,
+                    eat pineapples,
+                    and enjoy our time on the sand and in the sun.
+                </p>
+                <h3>Heber City Utah</h3>
+                <img src="images/utah-state-flag.jpg" alt="Utah State Flag" class="float-left">
+                <p>Heber City sits in the Heber Valley, nestled in the Wasatch Mountains. The
+                    valley was originally home to the Ute people.
+                    Mormon pioneers first settled the valley in 1858–1859. Throughout the late 1800s, Heber Valley
+                    became known for its rich farmland and dairy farming, earning it the nickname
+                    "The Switzerland of America" due to its stunning mountain scenery and lush green meadows.</p>
+                <div class="clearfix"></div>
+            </section>
+            <section class="card">
+                <h2>Web Dev Resources</h2>
+                <ul>
+                    <li><a href="https://dev.to">Dev.to Community</a></li>
+                    <li><a href="https://www.smashingmagazine.com">Smashing Magazine</a></li>
+                    <li><a href="https://css-tricks.com">CSS Tricks</a></li>
+                    <li><a href="https://www.w3schools.com">W3 Schools</a></li>
+                </ul>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p>&#169 2026 ☘️ <span id="currentyear"></span> Shelby Baird ☘️ Utah</p>
+        <p id="lastModified"></p>
+    </footer>
 </body>
+
 </html>

@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #2c5f2e;
+    --secondary-color: #97bc62;
+    --accent-color: #f4f9f0;
+    --text-dark: #1a1a1a;
+    --text-light: #ffffff;
+    --nav-hover: #f4f9f0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text-dark);
+    background-color: #f9f9f9;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 1.5rem 2rem;
+    text-align: center;
+}
+
+#course-title {
+    display: block;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    padding: 0.5rem 1.25rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: var(--nav-hover);
+    color: var(--primary-color);
+}
+
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+main h1 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.card {
+    background-color: var(--text-light);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.card h2 {
+    font-family: 'Raleway', sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    padding: 0.75rem 1rem;
+}
+
+.card img {
+    object-fit: cover;
+}
+
+.float-right {
+    float: right;
+    width: 180px;
+    margin: 0.5rem 0.5rem 1rem 1rem;
+}
+
+.float-left {
+    float: left;
+    width: 180px;
+    margin: 0.5rem 1rem 1rem 0.5rem;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.card p {
+    padding: 1rem;
+    line-height: 1.6;
+}
+
+.card ul {
+    list-style: disc;
+    padding: 1.5rem 1.5rem 1.5rem 2.5rem;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.card ul li {
+    margin-bottom: 0.5rem;
+}
+
+.card ul a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.card ul a:hover {
+    text-decoration: underline;
+}
+
+@media (min-width: 600px) {
+    .cards-container {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        gap: 1.5rem;
+    }
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
