@@ -1,0 +1,10 @@
+@media (min-width: 500px) {
+    heaader {
+        background-color: #000000;
+        color: #ffffff;
+    }
+
+    main {
+        grid-template-columns: 1fr 1fr;
+    }
+}
