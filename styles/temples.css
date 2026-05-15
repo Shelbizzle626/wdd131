@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Nunito:wght@400;600&display=swap');
+
 
 :root {
     --color-primary: #1a2d4d;
@@ -33,6 +33,14 @@ header {
     display: flex;
     flex-direction: column;
     gap: 0;
+}
+
+header #temples {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+    white-space: nowrap;
 }
 
 .header-top {
