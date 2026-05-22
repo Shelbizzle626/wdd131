@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maui Hawaii</title>
+    <meta name="author" content="Shelby Baird" />
+    <meta name="description" content="A place I've been">
+    <link rel="stylesheet" href="styles/place.css">
+    <script src="scripts/place.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Nunito:wght@400;600&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Maui Hawaii</h1>
+    </header>
+    <main>
+        <section class="hero">
+            <picture>
+                <source media="(min-width: 768px)" srcset="images/hero-large.webp">
+                <img src="images/maui-small.webp" alt="Black Sand Beach" loading="lazy">
+            </picture>
+        </section>
+        <section class="data">
+            <h2>Data</h2>
+            <dl>
+                <dt>Area</dt>
+                <dd>727.2 sq miles</dd>
+
+                <dt>Population</dt>
+                <dd>~167,000</dd>
+
+                <dt>Capital</dt>
+                <dd>Wailuku</dd>
+
+                <dt>Languages</dt>
+                <dd>English, Hawaiian</dd>
+
+                <dt>Currency</dt>
+                <dd>US Dollar</dd>
+
+                <dt>Time Zone</dt>
+                <dd>Hawaii-Aleutian Standart Time</dd>
+
+                <dt>Calling Code</dt>
+                <dd>+1 (808)</dd>
+
+                <dt>Internet TLD</dt>
+                <dd>.us</dd>
+            </dl>
+        </section>
+        <section class="weather">
+            <h2>Weather</h2>
+            <img src="images/weather-icon.svg" alt="Sunny weather icon" class="weather-icon-mobile">
+            <dl>
+                <dt>Temperature</dt>
+                <dd id="temperature">Loading...</dd>
+
+                <dt>Humidity</dt>
+                <dd id="humidity">Loading...</dd>
+
+                <dt>Wind</dt>
+                <dd id="wind">Loading...</dd>
+
+                <dt>Condition</dt>
+                <dd id="condition">Loading...</dd>
+
+                <dt>Wind Chill</dt>
+                <dd id="wind-chill">Loading...</dd>
+            </dl>
+        </section>
+    </main>
+    <footer>
+        <p>&#169;<span id="currentYear"></span> 🌺 Shelby Baird 🌺 Utah</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+
+</html>
