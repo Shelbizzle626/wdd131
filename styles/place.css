@@ -20,9 +20,10 @@
 
     --radius: 12px;
     --shadow: 0 4px 16px rgba(0, 119, 182, 0.15);
-}
 
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;600;700&display=swap');
+    --shadow-color: rgba(0, 119, 182, 0.15);
+    --text-shadow-color: rgba(0, 0, 0, 0.2);
+}
 
 *,
 *::before,
@@ -44,7 +45,7 @@ header {
     color: var(--color-white);
     text-align: center;
     padding: var(--spacing-lg) var(--spacing-md);
-    box-shadow: var(--shadow);
+    box-shadow: 0 4px 16px var(--shadow-color);
 }
 
 header h1 {
@@ -52,7 +53,7 @@ header h1 {
     font-size: 2.5rem;
     color: var(--color-white);
     letter-spacing: 1px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    text-shadow: 2px 2px 4px var(--text-shadow-color);
 }
 
 main {
