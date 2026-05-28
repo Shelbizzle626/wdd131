@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lazy Load Demonstration</title>
+    <meta name="description" content="description of page lazy loading images so page only uses neseccary resources.">
+    <meta name="author" content="Shelby Baird">
+    <link rel="stylesheet" href="styles/lazyload.css">
+</head>
+<body>
+    <header>
+    </header>
+    
+    <main>
+        <h1>Lazy Load Demonstration</h1>
+        <picture>
+            <img src="https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/accra-ghana/1280x800/accra-ghana-temple-759298-wallpaper.jpg" alt="Placeholder Ghana Temple Image" loading="lazy" width="400" height="600">
+        </picture>
+        <picture>
+            <img src="https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/albuquerque-new-mexico/1280x800/albuquerque-temple-lds-137883-wallpaper.jpg" alt="Placeholder Albuquerque Temple Image" loading="lazy" width="400" height="600">
+        </picture>
+        <picture>
+            <img src="https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/apia-samoa/1200x675/apia-samoa-temple-lds-495972-wallpaper.jpg" alt="Placeholder Samoa Temple Image" loading="lazy" width="400" height="600">
+        </picture>
+        <picture>
+            <img src="https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/bentonville-arkansas/1200x1200/f075dbbade2711eda107eeeeac1eee8d2650b397.jpeg" alt="Placeholder Bentonville Temple Image" loading="lazy" width="400" height="600">
+        </picture>
+        <picture>
+            <img src="https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/bountiful-utah/1280x800/bountiful-temple-766347-wallpaper.jpg" alt="Placeholder Bountiful Temple Image" loading="lazy" width="400" height="600">
+        </picture>
+        <picture>
+            <img src="https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/bern-switzerland/1280x800/bern-switzerland-temple-lds-784295-wallpaper.jpg" alt="Placeholder Bern Temple Image" loading="lazy" width="400" height="600">
+        </picture>
+    </main>
+    <footer>
+        <p>&#169;<span id="currentYear"></span> 🌺 Shelby Baird 🌺 Utah</p>
+        <p id="lastModified"></p>
+    </footer>
+    <script src="scripts/lazyload.js" defer></script>
+</body>
+</html>
