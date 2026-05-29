@@ -1,0 +1,168 @@
+:root {
+    --color-primary: #1a2d4d;
+    --color-accent: #c9a84c;
+    --color-bg: #f5f0e8;
+    --color-text: #2c2c2c;
+    --color-footer-bg: #1a2d4d;
+    --color-footer-text: #f5f0e8;
+    --font-heading: 'Cinzel', serif;
+    --font-body: 'Nunito', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: var(--color-primary);
+    color: var(--color-accent);
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+header #temples {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+    white-space: nowrap;
+}
+
+.header-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.hamburger {
+    background: none;
+    border: 2px solid var(--color-accent);
+    color: var(--color-accent);
+    font-size: 1.4rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding: 0.5rem 0;
+}
+
+nav.open {
+    display: flex;
+}
+
+nav a {
+    font-family: var(--font-body);
+    font-weight: 600;
+    color: var(--color-footer-text);
+    text-decoration: none;
+    padding: 0.4rem 0.9rem;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+}
+
+main {
+    max-width: 1200px;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    flex: 1;
+}
+
+main h1 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    letter-spacing: 0.04em;
+}
+
+/* Card grid container */
+.card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+/* Individual temple card */
+.temple-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.temple-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.temple-card h2 {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    color: var(--color-primary);
+    padding: 0.75rem 0.75rem 0.25rem;
+}
+
+.temple-card p {
+    font-size: 0.85rem;
+    padding: 0.1rem 0.75rem;
+    color: var(--color-text);
+}
+
+.temple-card p span {
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+/* Responsive grid */
+@media (min-width: 640px) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 960px) {
+    .card-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+footer {
+    background-color: var(--color-footer-bg);
+    color: var(--color-footer-text);
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
