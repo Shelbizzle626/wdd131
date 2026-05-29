@@ -25,6 +25,7 @@ body {
 }
 
 header {
+    position: relative;
     background-color: var(--color-primary);
     color: var(--color-accent);
     padding: 1rem 1.5rem;
@@ -47,6 +48,7 @@ header #temples {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    position: relative;
 }
 
 .hamburger {
@@ -69,6 +71,15 @@ nav {
 
 nav.open {
     display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--color-primary);
+    width: 150px;
+    padding: 0.5rem;
+    z-index: 100;
+    border-radius: 0 0 4px 4px;
 }
 
 nav a {
