@@ -1,0 +1,367 @@
+:root {
+    /* Color schema */
+    --ink: #15211F;
+    /* primary body text */
+    --teal: #0F766E;
+    /* primary brand: links, accents, section numbers */
+    --teal-deep: #0B4F49;
+    /* header band + footer background */
+    --amber: #E8A33D;
+    /* accent rules, swatch borders, highlights */
+    --pass: #2E7D32;
+    /* functional "pass" status */
+    --fail: #C62828;
+    /* functional "fail" status */
+    --paper: #F6F5F1;
+    /* page background */
+    --surface: #FFFFFF;
+    /* cards */
+    --line: #DAD8D0;
+    /* hairlines */
+    --muted: #5C6360;
+    /* secondary text */
+
+    /* Typography */
+    --display: "Sora", sans-serif;
+    /* headings */
+    --body: "Source Sans 3", sans-serif;
+    /* body copy */
+    --mono: "JetBrains Mono", monospace;
+    /* test IDs / labels */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+/* ---------- Header ---------- */
+header.page-head {
+    background: var(--teal-deep);
+    color: #F2FAF8;
+    padding: 2.4rem 1.5rem 2.6rem;
+    border-bottom: 5px solid var(--amber);
+}
+
+.head-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+    flex-wrap: wrap;
+}
+
+.logo {
+    flex: 0 0 auto;
+}
+
+.logo svg {
+    display: block;
+    width: 58px;
+    height: 58px;
+}
+
+.head-text h1 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(1.7rem, 4vw, 2.4rem);
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+.head-text p {
+    margin: 0.2rem 0 0;
+    color: #A9D9D1;
+    font-size: 0.98rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+/* ---------- Section nav ---------- */
+nav.toc {
+    max-width: 960px;
+    margin: 1.4rem auto 0;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+nav.toc a {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    text-decoration: none;
+    color: var(--teal-deep);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    padding: 0.35rem 0.7rem;
+    border-radius: 999px;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+nav.toc a:hover,
+nav.toc a:focus {
+    background: var(--teal);
+    color: #fff;
+    border-color: var(--teal);
+}
+
+/* ---------- Main ---------- */
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1.6rem 1.5rem 3rem;
+}
+
+section {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 5px solid var(--teal);
+    border-radius: 10px;
+    padding: 1.6rem 1.7rem;
+    margin: 1.4rem 0;
+}
+
+section h2 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.45rem;
+    color: var(--teal-deep);
+    margin: 0 0 0.8rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+}
+
+.num {
+    font-family: var(--mono);
+    font-size: 0.95rem;
+    color: var(--teal);
+    background: #E7F2F0;
+    border-radius: 6px;
+    padding: 0.05rem 0.5rem;
+}
+
+section p {
+    margin: 0.6rem 0;
+}
+
+.lead {
+    color: var(--muted);
+}
+
+strong {
+    color: var(--teal-deep);
+}
+
+a {
+    color: var(--teal);
+}
+
+ul {
+    margin: 0.6rem 0;
+    padding-left: 1.2rem;
+}
+
+li {
+    margin: 0.4rem 0;
+}
+
+.domain {
+    font-family: var(--mono);
+    font-size: 0.9rem;
+    background: #F0EFEA;
+    padding: 0.12rem 0.45rem;
+    border-radius: 5px;
+}
+
+/* Scenario question styling */
+.scenario {
+    border-left: 3px solid var(--amber);
+    padding: 0.2rem 0 0.2rem 0.9rem;
+    margin: 0.9rem 0;
+    font-style: italic;
+}
+
+.scenario span {
+    display: block;
+    font-style: normal;
+    font-size: 0.92rem;
+    color: var(--muted);
+    margin-top: 0.25rem;
+}
+
+/* ---------- Color schema ---------- */
+.swatches {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.9rem;
+    margin-top: 1rem;
+}
+
+.swatch {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.chip {
+    height: 64px;
+    border-bottom: 3px solid var(--amber);
+}
+
+.swatch .info {
+    padding: 0.6rem 0.7rem;
+}
+
+.swatch .name {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.swatch .hex {
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    color: var(--muted);
+}
+
+.swatch .use {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 0.25rem;
+}
+
+/* ---------- Typography specimens ---------- */
+.specimen {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 1rem 1.1rem;
+    margin: 0.9rem 0;
+}
+
+.specimen .label {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--teal);
+    margin-bottom: 0.4rem;
+}
+
+.spec-display {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 1.7rem;
+    color: var(--ink);
+}
+
+.spec-body {
+    font-family: var(--body);
+    font-size: 1.05rem;
+}
+
+.spec-mono {
+    font-family: var(--mono);
+    font-size: 1.05rem;
+    color: var(--teal-deep);
+}
+
+.specimen .use {
+    font-size: 0.88rem;
+    color: var(--muted);
+    margin-top: 0.5rem;
+}
+
+/* ---------- Wireframes ---------- */
+.wires {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+    margin-top: 1rem;
+    align-items: start;
+}
+
+.wire figcaption {
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    color: var(--teal-deep);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.wire svg {
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #FBFAF7;
+}
+
+@media (min-width: 740px) {
+    .wires {
+        grid-template-columns: 230px 1fr;
+    }
+}
+
+/* ---------- Footer ---------- */
+footer.page-foot {
+    background: var(--teal-deep);
+    color: #B7DBD5;
+    text-align: center;
+    padding: 1.6rem 1.5rem;
+    font-size: 0.9rem;
+}
+
+footer.page-foot strong {
+    color: #EAF6F4;
+}
+
+/* ---------- Motion ---------- */
+@media (prefers-reduced-motion: no-preference) {
+    section {
+        opacity: 0;
+        transform: translateY(14px);
+        animation: rise 0.6s ease forwards;
+    }
+
+    section:nth-of-type(1) {
+        animation-delay: 0.05s;
+    }
+
+    section:nth-of-type(2) {
+        animation-delay: 0.12s;
+    }
+
+    section:nth-of-type(3) {
+        animation-delay: 0.19s;
+    }
+
+    section:nth-of-type(4) {
+        animation-delay: 0.26s;
+    }
+
+    section:nth-of-type(5) {
+        animation-delay: 0.33s;
+    }
+
+    section:nth-of-type(6) {
+        animation-delay: 0.40s;
+    }
+
+    @keyframes rise {
+        to {
+            opacity: 1;
+            transform: none;
+        }
+    }
+}

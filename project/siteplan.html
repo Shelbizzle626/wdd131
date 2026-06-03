@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Website planning document for Checkpoint QA, a multi-platform QA checklist tool that lets testers pick a platform, run a checklist of test cases, mark pass or fail, and save each session for regression review.">
+    <meta name="author" content="Shelby">
+    <title>Site Plan | Checkpoint QA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/siteplan.css">
+
+</head>
+
+<body>
+
+    <header class="page-head">
+        <div class="head-inner">
+            <span class="logo" aria-hidden="true">
+                <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" role="img">
+                    <title>Checkpoint QA logo</title>
+                    <rect x="3" y="3" width="54" height="54" rx="14" fill="#0F766E" stroke="#E8A33D" stroke-width="3" />
+                    <path d="M17 31 L26 40 L44 20" fill="none" stroke="#F2FAF8" stroke-width="6" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </span>
+            <div class="head-text">
+                <h1>Checkpoint QA — Site Plan</h1>
+                <p>Website Planning Document &middot; WDD 131</p>
+            </div>
+        </div>
+    </header>
+
+    <nav class="toc" aria-label="Site plan sections">
+        <a href="#site-name">01 Site Name</a>
+        <a href="#purpose">02 Purpose</a>
+        <a href="#scenarios">03 Scenarios</a>
+        <a href="#colors">04 Color Schema</a>
+        <a href="#type">05 Typography</a>
+        <a href="#wireframes">06 Wireframes</a>
+    </nav>
+
+    <main>
+
+        <section id="site-name">
+            <h2><span class="num">01</span> Site Name</h2>
+            <p><strong>Checkpoint QA</strong></p>
+            <p>The name works on two levels for a quality-assurance tool. A <em>checkpoint</em> is the
+                point in testing where you confirm something works before moving on, and it also evokes
+                saving your progress &mdash; which is exactly what this tool does when it stores a test
+                session so you can return to it later. It reads clearly across every platform a tester
+                might be working on, from web to TV apps.</p>
+            <p class="lead">Optional domain idea: <span class="domain">checkpoint-qa.app</span></p>
+        </section>
+
+        <section id="purpose">
+            <h2><span class="num">02</span> Site Purpose</h2>
+            <p>Checkpoint QA is an interactive tool for software quality-assurance testers. A tester
+                selects a target platform &mdash; <strong>web, iOS, Android Mobile, Android TV, tvOS, Roku,
+                    or Firestick</strong> &mdash; and the tool loads a relevant checklist of test cases for that
+                platform. Each case can be marked <strong>pass</strong> or <strong>fail</strong>, and the
+                full session is saved in the browser so results stay in one place.</p>
+            <p>Instead of scattering testing results across separate documents, a tester can keep every
+                session together, making it far easier to look back at earlier runs and compare them when
+                checking for <strong>regressions</strong> after a new release.</p>
+            <p>The site is built as a multi-page tool: a <strong>Home</strong> page that introduces it and
+                starts a session, a <strong>Checklist</strong> page where the testing happens, a
+                <strong>Saved Sessions</strong> page for reviewing past runs, and a linked
+                <strong>References</strong> page. A short HTML form begins each session by capturing the
+                tester, the platform, and the build or version being tested.
+            </p>
+        </section>
+
+        <section id="scenarios">
+            <h2><span class="num">03</span> Scenarios</h2>
+            <p class="lead">Questions a member of the target audience (a QA tester) would ask, which the
+                site is designed to answer:</p>
+
+            <p class="scenario">&ldquo;Which test cases do I actually need to run for a Roku build versus a web
+                build?&rdquo;
+                <span>Answered by the platform selector, which loads only the checklist relevant to the chosen
+                    platform.</span>
+            </p>
+            <p class="scenario">&ldquo;Where can I see how this platform did the last time I tested it, so I can spot
+                regressions?&rdquo;
+                <span>Answered by the saved-session history, which keeps prior pass/fail results available for
+                    review.</span>
+            </p>
+            <p class="scenario">&ldquo;How do I record that a case failed and keep that result for later?&rdquo;
+                <span>Answered by the pass/fail controls plus local saving, so a failed case stays logged in the
+                    session.</span>
+            </p>
+        </section>
+
+        <section id="colors">
+            <h2><span class="num">04</span> Color Schema</h2>
+            <p>The palette is built around a professional teal, used as the dominant brand color, with a
+                warm amber accent and two functional status colors that match the pass/fail nature of QA
+                work. <strong>This color schema is applied throughout this planning document</strong> &mdash;
+                the header band, section borders, accents, and footer all use it.</p>
+            <div class="swatches">
+                <div class="swatch">
+                    <div class="chip" style="background:#0F766E;"></div>
+                    <div class="info">
+                        <div class="name">Teal (Primary)</div>
+                        <div class="hex">#0F766E</div>
+                        <div class="use">Links, section accents, section numbers, primary buttons.</div>
+                    </div>
+                </div>
+                <div class="swatch">
+                    <div class="chip" style="background:#0B4F49;"></div>
+                    <div class="info">
+                        <div class="name">Deep Teal</div>
+                        <div class="hex">#0B4F49</div>
+                        <div class="use">Header band and footer background; headings text.</div>
+                    </div>
+                </div>
+                <div class="swatch">
+                    <div class="chip" style="background:#E8A33D;"></div>
+                    <div class="info">
+                        <div class="name">Amber (Accent)</div>
+                        <div class="hex">#E8A33D</div>
+                        <div class="use">Accent rules, highlights, and decorative borders.</div>
+                    </div>
+                </div>
+                <div class="swatch">
+                    <div class="chip" style="background:#2E7D32;"></div>
+                    <div class="info">
+                        <div class="name">Pass Green</div>
+                        <div class="hex">#2E7D32</div>
+                        <div class="use">Functional status color for passed test cases.</div>
+                    </div>
+                </div>
+                <div class="swatch">
+                    <div class="chip" style="background:#C62828;"></div>
+                    <div class="info">
+                        <div class="name">Fail Red</div>
+                        <div class="hex">#C62828</div>
+                        <div class="use">Functional status color for failed test cases.</div>
+                    </div>
+                </div>
+                <div class="swatch">
+                    <div class="chip" style="background:#F6F5F1; border-bottom-color:#DAD8D0;"></div>
+                    <div class="info">
+                        <div class="name">Paper</div>
+                        <div class="hex">#F6F5F1</div>
+                        <div class="use">Page background behind white content cards.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="type">
+            <h2><span class="num">05</span> Typography</h2>
+            <p>Three fonts are used. <strong>This typography is applied throughout this planning
+                    document.</strong></p>
+
+            <div class="specimen">
+                <div class="label">Sora &mdash; Headings</div>
+                <div class="spec-display">Checkpoint QA</div>
+                <div class="use">Used for the site name, page headings, and section titles.</div>
+            </div>
+
+            <div class="specimen">
+                <div class="label">Source Sans 3 &mdash; Body</div>
+                <div class="spec-body">Pick a platform, run its checklist, and mark each case pass or fail.</div>
+                <div class="use">Used for all paragraph and body content for clean, readable copy.</div>
+            </div>
+
+            <div class="specimen">
+                <div class="label">JetBrains Mono &mdash; Test IDs &amp; Labels</div>
+                <div class="spec-mono">TC-014 &middot; ROKU &middot; PASS</div>
+                <div class="use">Used for test-case IDs, status labels, and other technical accents.</div>
+            </div>
+        </section>
+
+        <section id="wireframes">
+            <h2><span class="num">06</span> Wireframes</h2>
+            <p class="lead">Home page layout in mobile and desktop views. These are layout
+                representations only, not final content.</p>
+            <div class="wires">
+
+                <figure class="wire" style="margin:0;">
+                    <figcaption>Mobile</figcaption>
+                    <svg viewBox="0 0 240 470" xmlns="http://www.w3.org/2000/svg" role="img"
+                        aria-label="Mobile home page wireframe: header with logo and menu, hero with call to action, a stacked list of platform cards, and a footer.">
+                        <!-- header -->
+                        <rect x="12" y="12" width="216" height="40" rx="6" fill="#E4E2DA" stroke="#C9C7BF" />
+                        <rect x="22" y="26" width="60" height="12" rx="3" fill="#B5B3AB" />
+                        <rect x="196" y="24" width="22" height="16" rx="3" fill="#B5B3AB" />
+                        <!-- hero -->
+                        <rect x="12" y="62" width="216" height="84" rx="6" fill="#EDEBE3" stroke="#C9C7BF" />
+                        <rect x="26" y="78" width="150" height="14" rx="3" fill="#9CC7C1" />
+                        <rect x="26" y="100" width="120" height="10" rx="3" fill="#C9C7BF" />
+                        <rect x="26" y="118" width="92" height="18" rx="9" fill="#0F766E" />
+                        <!-- label -->
+                        <rect x="12" y="158" width="120" height="10" rx="3" fill="#B5B3AB" />
+                        <!-- platform cards stacked -->
+                        <rect x="12" y="178" width="216" height="44" rx="6" fill="#fff" stroke="#C9C7BF" />
+                        <rect x="24" y="194" width="100" height="12" rx="3" fill="#B5B3AB" />
+                        <rect x="12" y="230" width="216" height="44" rx="6" fill="#fff" stroke="#C9C7BF" />
+                        <rect x="24" y="246" width="100" height="12" rx="3" fill="#B5B3AB" />
+                        <rect x="12" y="282" width="216" height="44" rx="6" fill="#fff" stroke="#C9C7BF" />
+                        <rect x="24" y="298" width="100" height="12" rx="3" fill="#B5B3AB" />
+                        <rect x="12" y="334" width="216" height="44" rx="6" fill="#fff" stroke="#C9C7BF" />
+                        <rect x="24" y="350" width="100" height="12" rx="3" fill="#B5B3AB" />
+                        <!-- footer -->
+                        <rect x="12" y="416" width="216" height="42" rx="6" fill="#0B4F49" />
+                        <rect x="80" y="433" width="80" height="8" rx="3" fill="#4E8079" />
+                    </svg>
+                </figure>
+
+                <figure class="wire" style="margin:0;">
+                    <figcaption>Desktop</figcaption>
+                    <svg viewBox="0 0 540 360" xmlns="http://www.w3.org/2000/svg" role="img"
+                        aria-label="Desktop home page wireframe: top bar with logo and navigation links, a hero band with heading and call to action, a grid of platform cards, and a footer.">
+                        <!-- top bar -->
+                        <rect x="14" y="14" width="512" height="42" rx="6" fill="#E4E2DA" stroke="#C9C7BF" />
+                        <rect x="28" y="29" width="80" height="14" rx="3" fill="#B5B3AB" />
+                        <rect x="330" y="31" width="40" height="10" rx="3" fill="#B5B3AB" />
+                        <rect x="382" y="31" width="40" height="10" rx="3" fill="#B5B3AB" />
+                        <rect x="434" y="31" width="40" height="10" rx="3" fill="#B5B3AB" />
+                        <rect x="486" y="31" width="32" height="10" rx="3" fill="#B5B3AB" />
+                        <!-- hero band -->
+                        <rect x="14" y="66" width="512" height="96" rx="6" fill="#EDEBE3" stroke="#C9C7BF" />
+                        <rect x="34" y="86" width="240" height="18" rx="3" fill="#9CC7C1" />
+                        <rect x="34" y="114" width="300" height="10" rx="3" fill="#C9C7BF" />
+                        <rect x="34" y="132" width="110" height="20" rx="10" fill="#0F766E" />
+                        <!-- section label -->
+                        <rect x="14" y="176" width="160" height="10" rx="3" fill="#B5B3AB" />
+                        <!-- platform grid 4 cols x 2 rows -->
+                        <g fill="#fff" stroke="#C9C7BF">
+                            <rect x="14" y="196" width="120" height="54" rx="6" />
+                            <rect x="144" y="196" width="120" height="54" rx="6" />
+                            <rect x="274" y="196" width="120" height="54" rx="6" />
+                            <rect x="404" y="196" width="122" height="54" rx="6" />
+                            <rect x="14" y="258" width="120" height="54" rx="6" />
+                            <rect x="144" y="258" width="120" height="54" rx="6" />
+                            <rect x="274" y="258" width="120" height="54" rx="6" />
+                        </g>
+                        <g fill="#B5B3AB">
+                            <rect x="28" y="216" width="70" height="10" rx="3" />
+                            <rect x="158" y="216" width="70" height="10" rx="3" />
+                            <rect x="288" y="216" width="70" height="10" rx="3" />
+                            <rect x="418" y="216" width="70" height="10" rx="3" />
+                            <rect x="28" y="278" width="70" height="10" rx="3" />
+                            <rect x="158" y="278" width="70" height="10" rx="3" />
+                            <rect x="288" y="278" width="70" height="10" rx="3" />
+                        </g>
+                        <!-- footer -->
+                        <rect x="14" y="324" width="512" height="26" rx="6" fill="#0B4F49" />
+                        <rect x="230" y="333" width="80" height="8" rx="3" fill="#4E8079" />
+                    </svg>
+                </figure>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="page-foot">
+        <p>Created by <strong>Shelby</strong> &middot; WDD 131: Dynamic Web Fundamentals &middot; BYU-Idaho</p>
+    </footer>
+
+</body>
+
+</html>
