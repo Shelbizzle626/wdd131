@@ -219,6 +219,32 @@ li {
     border-bottom: 3px solid var(--amber);
 }
 
+/* Swatch color fills (moved out of the HTML) */
+.chip-teal {
+    background: var(--teal);
+}
+
+.chip-deep {
+    background: var(--teal-deep);
+}
+
+.chip-amber {
+    background: var(--amber);
+}
+
+.chip-pass {
+    background: var(--pass);
+}
+
+.chip-fail {
+    background: var(--fail);
+}
+
+.chip-paper {
+    background: var(--paper);
+    border-bottom-color: var(--line);
+}
+
 .swatch .info {
     padding: 0.6rem 0.7rem;
 }
@@ -288,6 +314,11 @@ li {
     gap: 1.4rem;
     margin-top: 1rem;
     align-items: start;
+}
+
+/* margin moved out of the HTML */
+.wire {
+    margin: 0;
 }
 
 .wire figcaption {
