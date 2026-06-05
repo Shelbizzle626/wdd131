@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Review Form</title>
+    <meta name="description" content="A product review form for rating and reviewing products.">
+    <meta name="author" content="Shelby Baird">
+    <link rel="stylesheet" href="styles/form.css">
+    <script src="scripts/form.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Product Review</h1>
+    </header>
+    <main>
+        <form method="get" action="review.html">
+            <label for="product">Product Name</label>
+            <select id="product" name="product" required>
+                <option value="" disabled selected>Select a Product ...</option>
+            </select>
+            <fiedlset>
+                <legend>Overall Rating</legend>
+                <input type="radio" id="rating1" name="rating" value="1" required>
+                <label for="rating1">1 ⭐️</label>
+
+                <input type="radio" id="rating2" name="rating" value="2" required>
+                <label for="rating2">2 ⭐️⭐️</label>
+
+                <input type="radio" id="rating3" name="rating" value="3" required>
+                <label for="rating3">3 ⭐️⭐️⭐️</label>
+
+                <input type="radio" id="rating4" name="rating" value="4" required>
+                <label for="rating4">4 ⭐️⭐️⭐️⭐️</label>
+
+                <input type="radio" id="rating5" name="rating" value="5" required>
+                <label for="rating5">5 ⭐️⭐️⭐️⭐️⭐️</label>
+            </fiedlset>
+
+            <label for="install-date">Date of Installation</label>
+            <input type="date" id="install-date" name="installDate" required>
+
+            <fieldset>
+                <legend>Useful Features</legend>
+                <div class="checkbox-row">
+                <input type="checkbox" id="durability" name="features" value="Durability">
+                <label for="durability">Durability</label>
+                </div>
+                <div class="checkbox-row">
+                    <input type="checkbox" id="ease" name="features" value="Ease of Use">
+                    <label for="ease">Ease of Use</label>
+                </div>
+                <div class="checkbox-row">
+                    <input type="checkbox" id="value" name="features" value="Value">
+                    <label for="value">Value</label>
+                </div>
+                <div class="checkbox-row">
+                    <input type="checkbox" id="design" name="features" value="Design">
+                    <label for="design">Design</label>
+                </div>
+                <div class="checkbox-row">
+                    <input type="checkbox" id="performance" name="features" value="Performance">
+                    <label for="performance">Performance</label>
+                </div>
+            </fieldset>
+
+            <label for="review">Written Review</label>
+            <textarea id="review" name="review"></textarea>
+
+            <label for="username">User Name</label>
+            <input type="text" id="username" name="userName">
+
+            <input type="submit" value="Submit Review">
+        </form>
+
+    </main>
+    
+
+    <footer>
+        <p>&#169; ☘️ <span id="year"></span> Shelby Baird ☘️ Utah</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>
