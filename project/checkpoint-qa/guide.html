@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QA Testing Guide — Checkpoint QA</title>
+  <meta name="description" content="A practical guide to running a structured QA pass: planning, priorities, cross-platform coverage, and sign-off for streaming applications.">
+  <meta name="author" content="Shelby">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="index.html"><span class="mark" aria-hidden="true">&#10003;</span> Checkpoint QA</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open navigation menu">&#9776;</button>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="checklists.html">Checklists</a></li>
+        <li><a href="guide.html" aria-current="page">Guide</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="section">
+    <div class="container">
+      <p class="eyebrow">QA testing guide</p>
+      <h1>How to run a structured test pass</h1>
+      <p class="lede">A good QA pass is repeatable: anyone on the team could pick up the same checklist and get the same coverage. This guide walks through the four stages Checkpoint QA is built around &mdash; plan, test, log, and sign-off.</p>
+
+      <div class="media mt">
+        <img class="guide-img" src="images/workflow.webp" alt="A four-step workflow illustration: Plan, Test, Log, and Sign-off, connected in sequence." width="1100" height="620" loading="lazy">
+      </div>
+
+      <div class="prose">
+        <h2>1. Plan the pass</h2>
+        <p>Before touching a device, decide what you are verifying and why. A clear scope keeps a pass from sprawling. Identify the feature or build under test, the platforms it ships to, and the behavior that must work for the release to go out.</p>
+        <ul>
+          <li>List the platforms in scope &mdash; web, iOS, tvOS, Android, Android TV, and Roku each behave differently.</li>
+          <li>Write checks as observable outcomes, not vague intentions. &ldquo;Filters reset after sign-out&rdquo; is testable; &ldquo;test filtering&rdquo; is not.</li>
+          <li>Assign a priority to every check so triage is fast later.</li>
+        </ul>
+
+        <h2>2. Understand priorities</h2>
+        <p>Priority is the single most useful label on a check. It answers one question: <em>if this fails, does the build still ship?</em></p>
+        <div class="callout">
+          <p><strong>P1 &mdash; Blocker.</strong> Core functionality. A failing P1 means the build is not shippable. Sign-in, playback, and content filtering usually live here.</p>
+          <p><strong>P2 &mdash; Major.</strong> Important but recoverable. The release can proceed with a known issue logged.</p>
+          <p><strong>P3 &mdash; Minor.</strong> Polish, cosmetics, and edge cases that do not affect core use.</p>
+        </div>
+        <p>Checkpoint QA watches for failing P1 checks and raises a hard-fail banner the moment one appears, so a blocker can never quietly sit in a long list.</p>
+
+        <div class="media">
+          <img class="guide-img" src="images/coverage.webp" alt="Concentric ring illustration representing layers of test coverage around a central checkmark." width="900" height="900" loading="lazy">
+        </div>
+
+        <h2>3. Test across platforms</h2>
+        <p>The same feature rarely behaves identically on every device. Remote-based navigation on a TV exposes focus bugs that a mouse never will, and a backgrounded mobile app can lose state that a desktop tab keeps. Run each platform&rsquo;s checklist on real hardware whenever possible, and note the build number you tested.</p>
+        <ul>
+          <li><strong>Web:</strong> verify across more than one browser engine, and at both mobile and desktop widths.</li>
+          <li><strong>Mobile:</strong> test backgrounding, rotation, and permission prompts.</li>
+          <li><strong>TV:</strong> walk every control with the remote&rsquo;s directional pad and confirm focus is always visible.</li>
+        </ul>
+
+        <h2>4. Log results and sign off</h2>
+        <p>A pass is only finished when its results are recorded somewhere durable. Mark each check, capture the failures with enough detail to reproduce them, and copy the summary into your tracker. A run with a failing P1 should never be signed off as complete.</p>
+        <p>When every priority-1 check passes and remaining issues are logged, the build is ready for sign-off. Checkpoint QA&rsquo;s scorecard gives you that snapshot at a glance.</p>
+
+        <p class="mt"><a class="btn btn-primary" href="checklists.html">Open the checklist tool</a></p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Checkpoint QA</h3>
+        <p>A lightweight checklist manager for cross-platform QA test runs.</p>
+        <p>&copy; <span id="year">2026</span> Shelby &middot; WDD 131 Project</p>
+      </div>
+      <div>
+        <h3>Pages</h3>
+        <p><a href="index.html">Home</a></p>
+        <p><a href="checklists.html">Checklists</a></p>
+        <p><a href="guide.html">Guide</a></p>
+        <p><a href="contact.html">Contact</a></p>
+      </div>
+      <div>
+        <h3>About</h3>
+        <p>BYU-Idaho &middot; Dynamic Web Fundamentals</p>
+        <p><a href="references.html">References &amp; attributions</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>

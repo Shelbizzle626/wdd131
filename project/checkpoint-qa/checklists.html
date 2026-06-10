@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist Tool — Checkpoint QA</title>
+    <meta name="description"
+        content="Build and run a QA checklist: load a platform template, add custom checks, mark pass or fail, and track coverage. Progress is saved on your device.">
+    <meta name="author" content="Shelby Baird">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header">
+        <nav class="nav container" aria-label="Main navigation">
+            <a class="brand" href="index.html"><span class="mark" aria-hidden="true">&#10003;</span> Checkpoint QA</a>
+            <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu"
+                aria-label="Open navigation menu">&#9776;</button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="checklists.html" aria-current="page">Checklists</a></li>
+                <li><a href="guide.html">Guide</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main" class="section">
+        <div class="container">
+            <p class="eyebrow">Checklist tool</p>
+            <h1 id="checklist-title">Untitled checklist</h1>
+            <p class="lede">Pick a platform to load a starter template, or add your own checks. Mark each item pass,
+                fail, or blocked &mdash; everything is saved to this browser automatically.</p>
+
+            <!-- Controls -->
+            <div class="tool-bar mt">
+                <div class="field">
+                    <label for="platform-select">Load platform template</label>
+                    <select id="platform-select">
+                        <option value="web">Web Player</option>
+                        <option value="ios">iOS</option>
+                        <option value="tvos">tvOS / Apple TV</option>
+                        <option value="android">Android Mobile</option>
+                        <option value="androidtv">Android TV</option>
+                        <option value="roku">Roku</option>
+                    </select>
+                </div>
+                <button type="button" id="export-btn" class="btn btn-ghost btn-sm">Copy summary</button>
+                <button type="button" id="clear-btn" class="btn btn-danger btn-sm">Clear checklist</button>
+            </div>
+            <p id="export-note" class="note" aria-live="polite"></p>
+
+            <!-- Scorecard -->
+            <h2 class="visually-hidden">Coverage summary</h2>
+            <div class="scorecard" aria-live="polite">
+                <div class="stat"><span class="num" id="stat-total">0</span><span class="label">Total</span></div>
+                <div class="stat is-pass"><span class="num" id="stat-pass">0</span><span class="label">Pass</span></div>
+                <div class="stat is-fail"><span class="num" id="stat-fail">0</span><span class="label">Fail</span></div>
+                <div class="stat"><span class="num" id="stat-blocked">0</span><span class="label">Blocked</span></div>
+            </div>
+
+            <p id="progress-label" class="note">0% tested</p>
+            <div class="progress" role="progressbar" aria-label="Percent of checks tested">
+                <span id="progress-bar"></span>
+            </div>
+
+            <div id="hard-fail" class="hard-fail" role="alert" hidden></div>
+
+            <!-- Add a check -->
+            <h2>Add a check</h2>
+            <form id="add-form" class="tool-bar">
+                <div class="field field-grow">
+                    <label for="new-check">Check description</label>
+                    <input type="text" id="new-check" name="new-check" placeholder="e.g. Filters reset after sign-out"
+                        required>
+                </div>
+                <div class="field">
+                    <label for="new-priority">Priority</label>
+                    <select id="new-priority" name="new-priority">
+                        <option value="P1">P1 &mdash; Blocker</option>
+                        <option value="P2">P2 &mdash; Major</option>
+                        <option value="P3">P3 &mdash; Minor</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary btn-sm">Add check</button>
+            </form>
+
+            <!-- Filters -->
+            <h2>Checks</h2>
+            <div class="filters" role="group" aria-label="Filter checks by status">
+                <button type="button" class="chip" data-filter="all" aria-pressed="true">All</button>
+                <button type="button" class="chip" data-filter="untested" aria-pressed="false">Untested</button>
+                <button type="button" class="chip" data-filter="pass" aria-pressed="false">Pass</button>
+                <button type="button" class="chip" data-filter="fail" aria-pressed="false">Fail</button>
+                <button type="button" class="chip" data-filter="blocked" aria-pressed="false">Blocked</button>
+            </div>
+
+            <ul class="checklist" id="checklist"></ul>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <h3>Checkpoint QA</h3>
+                <p>A lightweight checklist manager for cross-platform QA test runs.</p>
+                <p>&copy; <span id="year">2026</span> Shelby &middot; WDD 131 Project</p>
+            </div>
+            <div>
+                <h3>Pages</h3>
+                <p><a href="index.html">Home</a></p>
+                <p><a href="checklists.html">Checklists</a></p>
+                <p><a href="guide.html">Guide</a></p>
+                <p><a href="contact.html">Contact</a></p>
+            </div>
+            <div>
+                <h3>About</h3>
+                <p>BYU-Idaho &middot; Dynamic Web Fundamentals</p>
+                <p><a href="references.html">References &amp; attributions</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/templates.js"></script>
+    <script src="scripts/checklists.js"></script>
+</body>
+
+</html>

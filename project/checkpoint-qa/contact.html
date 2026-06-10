@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact &amp; Feedback — Checkpoint QA</title>
+  <meta name="description" content="Send feedback or a feature request for Checkpoint QA. Tell us your role, the platform you test most, and what would make your QA passes easier.">
+  <meta name="author" content="Shelby">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="index.html"><span class="mark" aria-hidden="true">&#10003;</span> Checkpoint QA</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open navigation menu">&#9776;</button>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="checklists.html">Checklists</a></li>
+        <li><a href="guide.html">Guide</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="section">
+    <div class="container split">
+      <div>
+        <p class="eyebrow">Contact &amp; feedback</p>
+        <h1>Tell us what would make your QA passes easier.</h1>
+        <p class="lede">Checkpoint QA grows from real tester feedback. Share a feature request, a bug, or just how you run your checklists today.</p>
+        <div class="media mt">
+          <img src="images/contact.webp" alt="Illustration of two overlapping message bubbles in teal and amber." width="1100" height="620" loading="lazy">
+        </div>
+      </div>
+
+      <div>
+        <form id="contact-form" class="form-card" method="get" action="thanks.html">
+          <div class="field">
+            <label for="name">Name <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+          </div>
+
+          <div class="field">
+            <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </div>
+
+          <fieldset>
+            <legend>Your role</legend>
+            <div class="radio-row">
+              <label><input type="radio" name="role" value="QA Tester" checked> QA Tester</label>
+              <label><input type="radio" name="role" value="Developer"> Developer</label>
+              <label><input type="radio" name="role" value="Product Manager"> Product Manager</label>
+              <label><input type="radio" name="role" value="Other"> Other</label>
+            </div>
+          </fieldset>
+
+          <div class="field">
+            <label for="platform">Platform you test most</label>
+            <select id="platform" name="platform">
+              <option value="Web">Web</option>
+              <option value="iOS">iOS</option>
+              <option value="tvOS">tvOS / Apple TV</option>
+              <option value="Android">Android Mobile</option>
+              <option value="Android TV">Android TV</option>
+              <option value="Roku">Roku</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="topic">Topic <span class="req" aria-hidden="true">*</span></label>
+            <select id="topic" name="topic" required>
+              <option value="">Choose one&hellip;</option>
+              <option value="Feature request">Feature request</option>
+              <option value="Bug report">Bug report</option>
+              <option value="Question">Question</option>
+              <option value="General feedback">General feedback</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="message">Message <span class="req" aria-hidden="true">*</span></label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+
+          <div class="field">
+            <label><input type="checkbox" name="updates" value="yes"> Email me when new features ship</label>
+          </div>
+
+          <p class="note">Fields marked <span class="req">*</span> are required.</p>
+          <button type="submit" class="btn btn-primary">Send feedback</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Checkpoint QA</h3>
+        <p>A lightweight checklist manager for cross-platform QA test runs.</p>
+        <p>&copy; <span id="year">2026</span> Shelby &middot; WDD 131 Project</p>
+      </div>
+      <div>
+        <h3>Pages</h3>
+        <p><a href="index.html">Home</a></p>
+        <p><a href="checklists.html">Checklists</a></p>
+        <p><a href="guide.html">Guide</a></p>
+        <p><a href="contact.html">Contact</a></p>
+      </div>
+      <div>
+        <h3>About</h3>
+        <p>BYU-Idaho &middot; Dynamic Web Fundamentals</p>
+        <p><a href="references.html">References &amp; attributions</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/main.js"></script>
+  <script src="scripts/contact.js"></script>
+</body>
+</html>

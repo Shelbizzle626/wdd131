@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkpoint QA — Cross-Platform QA Checklists</title>
+    <meta name="description"
+        content="Checkpoint QA is a lightweight, browser-based checklist manager that helps QA testers run consistent test passes across web, mobile, and TV platforms.">
+    <meta name="author" content="Shelby Baird">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header">
+        <nav class="nav container" aria-label="Main navigation">
+            <a class="brand" href="index.html"><span class="mark" aria-hidden="true">&#10003;</span> Checkpoint QA</a>
+            <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu"
+                aria-label="Open navigation menu">&#9776;</button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="checklists.html">Checklists</a></li>
+                <li><a href="guide.html">Guide</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section class="hero">
+            <div class="container hero-inner">
+                <p class="eyebrow">QA workflow tool</p>
+                <h1>Run a consistent test pass on every platform.</h1>
+                <p>Checkpoint QA turns scattered test notes into a structured, repeatable checklist. Pick a platform
+                    template, mark each check pass or fail, and watch your coverage scorecard update in real time
+                    &mdash; right in the browser, with your progress saved on your device.</p>
+                <div class="actions">
+                    <a class="btn btn-primary" href="checklists.html">Open the checklist tool</a>
+                    <a class="btn btn-ghost" href="guide.html" style="color:#fff;border-color:#fff;">Read the guide</a>
+                </div>
+                <p id="greeting" class="note" style="color:#E6F1EF;margin-top:1rem;" hidden></p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <p class="eyebrow">Why it exists</p>
+                <h2>Testing the same feature six different ways is hard to track.</h2>
+                <p class="lede">When a feature ships to web, iOS, tvOS, Android, Android TV, and Roku, every platform
+                    needs its own pass &mdash; with the same rigor and the same priorities. Checkpoint QA gives each run
+                    a shared structure so nothing slips between devices.</p>
+
+                <div class="grid grid-3 mt">
+                    <article class="card">
+                        <div class="icon" aria-hidden="true">[P]</div>
+                        <h3>Platform templates</h3>
+                        <p>Start from a ready-made checklist for the platform you are testing, then tailor it to the
+                            feature in front of you.</p>
+                    </article>
+                    <article class="card">
+                        <div class="icon" aria-hidden="true">[%]</div>
+                        <h3>Live scorecard</h3>
+                        <p>Pass, fail, blocked, and percent-tested totals recalculate the moment you update a check.</p>
+                    </article>
+                    <article class="card">
+                        <div class="icon" aria-hidden="true">[!]</div>
+                        <h3>Hard-fail alerts</h3>
+                        <p>A failing priority-1 check raises a blocker banner so a non-shippable build never hides in
+                            the list.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section alt">
+            <div class="container split">
+                <div class="media">
+                    <img src="images/platforms.webp"
+                        alt="Stylized illustration of a desktop screen, a phone, and a television representing multi-platform testing."
+                        width="1200" height="800" loading="lazy">
+                </div>
+                <div>
+                    <p class="eyebrow">Built for real test runs</p>
+                    <h2>One structure, every device.</h2>
+                    <p>Each template carries priority levels so the most important checks stay visible. Filter by status
+                        to focus on what failed, add custom checks for edge cases, and copy a clean summary into your
+                        bug tracker when the run is done.</p>
+                    <p><a class="btn btn-ghost" href="checklists.html">Start a checklist</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container split reverse">
+                <div class="media">
+                    <img src="images/triage.webp"
+                        alt="Bar chart illustration showing priority levels P1, P2, and P3 at decreasing heights."
+                        width="1000" height="700" loading="lazy">
+                </div>
+                <div>
+                    <p class="eyebrow">Priorities that mean something</p>
+                    <h2>Know what blocks a release.</h2>
+                    <p>Priority 1 checks are the ones that stop a ship. Priority 2 covers important-but-recoverable
+                        behavior, and priority 3 is polish. Checkpoint QA keeps those levels front and center so triage
+                        decisions are obvious.</p>
+                    <p><a class="btn btn-ghost" href="guide.html">See how priorities work</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-tight center">
+            <div class="container">
+                <p id="visit-count" class="note"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <h3>Checkpoint QA</h3>
+                <p>A lightweight checklist manager for cross-platform QA test runs.</p>
+                <p>&copy; <span id="year">2026</span> Shelby &middot; WDD 131 Project</p>
+            </div>
+            <div>
+                <h3>Pages</h3>
+                <p><a href="index.html">Home</a></p>
+                <p><a href="checklists.html">Checklists</a></p>
+                <p><a href="guide.html">Guide</a></p>
+                <p><a href="contact.html">Contact</a></p>
+            </div>
+            <div>
+                <h3>About</h3>
+                <p>BYU-Idaho &middot; Dynamic Web Fundamentals</p>
+                <p><a href="references.html">References &amp; attributions</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
